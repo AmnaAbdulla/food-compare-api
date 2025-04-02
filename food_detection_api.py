@@ -3,6 +3,7 @@ import cv2
 import numpy as np
 import requests
 import traceback
+import os
 
 app = Flask(__name__)
 
@@ -118,4 +119,6 @@ def classify_images():
         return jsonify({"error": "Internal Server Error", "details": str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 8080))  # Use Render's assigned port
+    from waitress import serve
+    serve(app, host="0.0.0.0", port=port)

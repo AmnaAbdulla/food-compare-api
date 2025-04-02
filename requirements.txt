@@ -1,4 +1,6 @@
 Flask
-opencv-python
+opencv-python-headless
 numpy
 requests
+gunicorn
+waitress
