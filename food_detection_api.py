@@ -91,7 +91,7 @@ def classify_food_image(image_url, is_second_image=False):
         print(f"Error processing image {image_url}: {str(e)}")
         return False
 
-@app.route('/classify', methods=['POST'])
+@app.route('/compare', methods=['POST'])
 def classify_images():
     """API Endpoint: Receives two image URLs and classifies them."""
     try:
