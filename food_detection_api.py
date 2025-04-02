@@ -109,8 +109,6 @@ def classify_images():
 
         return jsonify({
             "final_result": bool(final_result),
-            "first_result": bool(first_result),
-            "second_result": bool(second_result)
         })
 
     except Exception as e:
